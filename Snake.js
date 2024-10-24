@@ -38,7 +38,6 @@ function update(){
     if (gameover===true){
         return
     }
-   
     context.fillStyle="black"
     context.fillRect(0,0,board.width,board.height)
  
@@ -51,7 +50,8 @@ function update(){
         score += 50
         document.getElementById("score").innerHTML = "Score:"+score
         if (score ==100){
-            tempo -= 100
+            tempo += 100
+            setInterval(update, tempo)
         }
         // 
         snakeBody.push([foodx,foody])
